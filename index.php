@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans+SC|Cedarville+Cursive|Tangerine|Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>RPGA</title>
+  </head>
+  
+  <div id="logo" style="cursor: pointer; width: 100%; text-align: center; font-size: 108pt; font-family: Fredericka the Great; color: #990000; background: url('https://www.toptal.com/designers/subtlepatterns/patterns/textured_stripes.png');">
+    RPG AIDES
+  </div>
+  <div style="position: relative; top: -40px; text-align: center; font-family: Cedarville Cursive; font-size: 18pt; color: #738496;">Role-Playing Games Aides</div>
+  
+  <div class="tab-links" style="position: relative; top: -40px; text-align: center; background: #0000006e;">
+    <button class="menu"><a href="../Generator">Generators</a></button>
+	<button class="menu"><a href="../Sheets">Sheets</a></button>
+  </div>
+ 
+
+</body>
+
+<style>
+  body {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png");
+    cursor: url('cursor.png'), progress;
+  }
+
+  .menu { 
+    background: transparent;
+    border: none;
+    font-family: amatic sc;
+    font-size: 28pt;
+    font-weight: bold;
+    padding: 0px 15px;
+    color: #d7d6d0;
+  }
+  .menu a {
+    color: #d7d6d0;
+  }
+  .menu.active a {
+    color: #990000;
+  }
+  .menu:hover a {
+    color: #efb839;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  
+ ::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #00000085;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #990000;
+}
+
+  /* Tooltip text */
+
+  .tooltip .text {
+    visibility: hidden;
+    background-color: rgba(0, 100, 125, .8);
+    color: #cff9f8;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    z-index: 4;
+    position: absolute;
+  }
+
+  .tooltip:hover .text {
+    visibility: visible;
+  }
+
+</style>
+</html>
