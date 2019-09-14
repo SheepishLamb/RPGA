@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans+SC|Cedarville+Cursive|Concert+One|Tangerine|Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Generator</title>
+  </head>
+  <body style="background: url(https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png);">
+  <a href="../index.php">Generators</a>
+  <div id="logo" style="cursor: pointer; width: 100%; text-align: center; font-size: 108pt; font-family: Fredericka the Great; color: #990000; background: url('https://www.toptal.com/designers/subtlepatterns/patterns/textured_stripes.png');">
+    Taverns
+  </div>
+  
+<div style="width: 100%; text-align: center;">
+  <h2 style="font-size:  48pt; font-family: Fredericka the Great;" id="output" class="button">&nbsp;</h2>
+</div>
+
+<div style="width: 100%; text-align: center;">
+  <button id="button2">Tavern Setting</button>
+  <h2 style="font-size: 16pt; font-family: Courier New;" id="output2">&nbsp;</h2>
+</div>
+
+<div style="width: 100%; text-align: center;">
+  <button id="button3">Random Encounter</button>
+  <h2 style="font-size: 16pt; font-family: Courier New;" id="output3">&nbsp;</h2>
+</div>
+
+<div style="width: 100%; text-align: center;">
+  <button id="button4">Tavern Meal</button>
+  <h2 style="font-size: 16pt; font-family: Courier New;" id="output4">&nbsp;</h2>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script>
+//Tavern Name
+var words = {
+      W: ['Ace', 'Axman', 'Archer', 'Ale', 'Bastard', 'Dragon', 'Badger', 'Ax', 'Blade', 'Fool', 'Battlement', 'Bear', 'Bull', 'Hawk', 'Bridge', 'Bee', 'Cat', 'Highwayman', 'Brook', 'Boar', 'Cock', 'Hound', 'Castle', 'Duke', 'Dog', 'Idiot', 'City', 'Dutchess', 'Hammer', 'Mage', 'Clock', 'Fire', 'Jack', 'Manticore', 'Deer', 'Fish', 'King', 'Mare', 'Eagle', 'Flag', 'Knife', 'Mouse', 'Goat', 'Lion', 'Ladies', 'Prince', 'Mace', 'Mole', 'Maiden', 'Princess', 'Mule', 'Mountain', 'Nightmare', 'Ram', 'Potion', 'Nymph', 'Plough', 'Man', 'Rat', 'River', 'Sea', 'Queen', 'Snake', 'Shark', 'Ship', 'Rogue', 'Sorrow', 'Shield', 'Trap', 'Sow', 'Sword', 'Soldier', 'Virgin', 'Swallow', 'Widow', 'Tree', 'Wasp', 'Wizards', 'Wyrm', 'Village', 'Wolf'],
+      X: ['Belching', 'Crushing', 'Dreaming', 'Drinking', 'Drowning', 'Fighting', 'Laughing', 'Laying', 'Living', 'Plotting', 'Prancing', 'Running', 'Screaming', 'Singing', 'Sleeping', 'Sneaking', 'Snoozing', 'Stabbing', 'Starving', 'Swinging'],
+      Y: ['Cart', 'Child', 'Cup', 'Dream', 'Flagon', 'Folly', 'Fork', 'Hearth', 'Husband', 'Inn', 'Keep', 'Knife', 'Mug', 'Nightmare', 'Plate', 'Plot', 'Song', 'Spoon', 'Wagon', 'Wife'],
+      Z: ['Bloodied', 'Branded', 'Bronzed', 'Burnt', 'Chipped', 'Cracked', 'Dropped', 'Drowned', 'Fallen', 'Forgotten', 'Frozen', 'Full', 'Half', 'Quarter', 'Rusted', 'Soaked', 'Spun', 'Stabbed', 'Tall', 'Thirsty']
+};
+function randomWord(type) {
+  var rando = Math.floor(Math.random() * words[type].length),
+    word = words[type][rando];
+  return word;
+}
+function tavernName() {
+var W = randomWord('W'),
+    W2 = randomWord('W'),
+    X = randomWord('X'),
+    Y = randomWord('Y'),
+    Y2 = randomWord('Y'),
+    Z = randomWord('Z');
+  var names = ['The ' + W + ' & ' + W2 + ' ', 'The ' + X + ' ' + W + ' ', 'The ' + W + "'s " + Y + ' ', 'The ' + Z + ' ' + W + ' ', 'The ' + Y + ' & ' + Y2 + ' ', 'The ' + W + " & " + Y + ' ', 'The ' + Z + ' ' + Y + ' ', 'The ' + X + ' ' + Y + ' '];
+  var name = names[Math.floor(Math.random() * names.length)];
+  var container = document.getElementById('output');
+  container.innerHTML = name;
+}
+$(document).ready(function(){
+  tavernName();
+  $('.button').click(function(){
+    tavernName();
+  });
+});
+//Tavern Name - End
+
+
+//Tavern Setting
+var words2 = {
+  Space: ['A spacious, two story building with a wood/rustic environment.', 'A quaint, one story brick building that may have once been a home.', 'A three story brick and mortar building.', 'A cozy building made from logs.', 'A small, squashed tavern, shoved between two other buildings.'],
+  Smell: ['The tavern smells of rose oil.', 'The tavern smells of lavender.', 'The tavern smells of cooking meat.', 'The tavern smells vaguely of fish.', 'The tavern smells musky, like Barbarian feet.', 'The tavern smells heavily of vanilla, as if someone has been baking.', 'The tavern smells like spilled ale.', 'Theres a lingering scent of piss in the tavern.' ],
+  Light: ['Sparse candles light the tavern.', 'Decorative candelabras line the walls.', 'The dining area is dimly lit.', 'Its very bright in here.', 'Lights hang from overhead above each booth.', 'Magic orbs float about, keeping the common area illuminated as necessary.'],
+  Walls: ['The walls are decorated with magic sigils - quite possibly spells to ward off Evil.', 'The walls are decorated with a few paintings depicting nearby forests and lakes.', 'The walls are decorated with a few paintings depicting old battles.', 'The walls are decorated with trophy game heads - namely boars, elks, and bears.', 'The walls are lined with decorative wallpaper that somewhat mesmerizes you the longer you stare at it.', 'You can spot various red paint splatters on certain parts of the walls - at least, you *think* its paint.'],
+  Common: ['The common area is spacious and welcoming to those who are weary and need a rest.', 'The common area is small, but comfortable, offering a few cushioned seats by a modest fireplace.', 'Theres a large, roaring fireplace in the common area with plenty of seating arranged around it.', 'Theres a small wooden stage in the common area, where entertainment would be held on normal nights.', 'The only seating in the common area is at the bar.'], 
+  Crowd: ['The bar is crowded with patrons.', 'The bar is empty save one or two patrons, drinking quietly.', 'At the bar is a group of adventurers, all drinking and sharing their stories with the barkeep.', 'There are small groups at the booths, chattering amongst themselves.', 'Theres a bard in the corner, playing the lute for no one in particular.', 'Theres a bugbear arm wrestling another patron in the middle of the tavern.'],
+};
+function randomWord2(type) {
+  var rando = Math.floor(Math.random() * words2[type].length),
+    word2 = words2[type][rando];
+  return word2;
+}
+function tavernSetting() {
+  var Space = randomWord2('Space'),
+    Smell = randomWord2('Smell'),
+    Light = randomWord2('Light'),
+	Walls = randomWord2('Walls'),
+	Common = randomWord2('Common'),
+    Crowd = randomWord2('Crowd');
+  var setting = [' ' + Space + ' <br/> ' + Smell + ' ' + Light + ' ' + Walls + ' ' + Common + ' <br/> ' + Crowd + ' '];
+  var container2 = document.getElementById('output2');
+  container2.innerHTML = setting;
+}
+$(document).ready(function(){
+  tavernSetting();
+  $('#button2').click(function(){
+    tavernSetting();
+  });
+});
+
+//tavern Setting - End
+
+
+//Random encounters
+var words3 = {  
+  Subject: ['An old man', 'An old woman', 'A young man', 'A young woman', 'A Cleric', 'A Rogue', 'A soldier', 'A Monk', 'An Orc', 'An Elf', 'A group of warriors', 'A gathering of Kobolds', 'A spoony Bard', 'A raggedy doctor', 'A tall dragonborn', 'A small child holding a porcelain doll', 'A sugar skull', 'A couple of old adventurers', 'A sailor', 'An alchemist', 'A Paladin', 'A scholar'],
+  Verb: ['sitting', 'yelling', 'crying', 'waiting', 'standing', 'dancing', 'drinking', 'laughing', 'playing cards', 'chatting with friends', 'asking for help', 'playing the flute', 'eating a meal', 'drinking mead', 'commanding others', 'whistling', 'in the middle of a bar fight', 'winning a drinking contest'],
+  Location: ['at the bar', 'in a booth', 'alone in the corner', 'in the shadows', 'by themselves', 'near the entrance', 'just outside the door', 'in a group', 'right in your way'],
+  Verb2: ['They say,', 'They notice you.', 'They approach the group.', 'They whisper,', 'They chant,', 'They narrow their eyes at you.', 'They say in a sing-song voice,', 'They clap their hands together at the sight of you.', 'They shake their head at you as you enter.', 'They ball their fists up and challenge you.'],
+  Phrase: ['"Its drawing near."', '"The time approaches."', '"She will never forgive you."', '"Theyre coming for you."', '"Come here."', '"Are you ready?"', '"Can you help me?"', '"What are YOU doing here?"', '"Why me?!"', '"I see all!"', '"May the Abyss take you!"', '"Can I sit with you?"']
+};
+function randomWord3(type) {
+  var rando = Math.floor(Math.random() * words3[type].length),
+    word3 = words3[type][rando];
+  return word3;
+}
+function tavernEncounter() {
+  var Subject = randomWord3('Subject'),
+    Verb = randomWord3('Verb'),
+    Location = randomWord3('Location'),
+    Verb2 = randomWord3('Verb2'),
+    Phrase = randomWord3('Phrase');
+  var encounter = [' ' + Subject + ' is ' + Verb + ' ' + Location + '. ' + Verb2 + ' ' + Phrase + '. '];
+  var container3 = document.getElementById('output3');
+  container3.innerHTML = encounter;
+}
+$(document).ready(function(){
+  tavernEncounter();
+  $('#button3').click(function(){
+    tavernEncounter();
+  });
+});
+// random encounters
+
+//tavern meals
+var words4 = {
+  Protein: ['Pork', 'Beef', 'Bacon', 'Turkey', 'Sausage', 'Chicken', 'Lamb', 'Lizard', 'Snake', 'Wolf', 'Ribs', 'Rodent'],
+  Cooking: ['Roasted', 'Boiled', 'Fried', 'Breaded', 'Baked', 'Grilled', 'Raw', 'Smoked', 'Cured', 'Aged', 'Steamed', 'Barbecued'],
+  Vegetable: ['Carrot', 'Peas', 'Celery', 'Onions', 'Turnips', 'Beets', 'Tomato', 'Corn', 'Lettuce', 'Broccoli'],
+  Fruit: ['Apple', 'Grapefruit', 'Cucumber', 'Mango', 'Papaya', 'Apricot', 'Blueberry', 'Bananas', 'Raspberry', 'Kiwifruit'],
+  Seasoning: ['Salt', 'Pepper', 'Curry', 'Rosemary', 'Garlic', 'Nutmeg', 'Hazelnut', 'Thyme', 'Cayanne', 'Sumac']
+};
+function randomWord4(type) {
+  var rando = Math.floor(Math.random() * words4[type].length),
+    word4 = words4[type][rando];
+  return word4;
+}
+function tavernMeal() {
+  var Protein = randomWord4('Protein'),
+    Cooking = randomWord4('Cooking'),
+	Cooking2 = randomWord4('Cooking'),
+    Vegetable = randomWord4('Vegetable'),
+	Vegetable2 = randomWord4('Vegetable'),
+    Fruit = randomWord4('Fruit'),
+    Seasoning = randomWord4('Seasoning');
+  var meals = ['A plate of ' + Cooking + ' ' + Protein + ' with ' + Vegetable + '', 
+  'A bowl of ' + Cooking + ' ' + Protein + ' with ' + Vegetable + '',
+  'A plate of ' + Cooking + ' ' + Vegetable + ' with ' + Vegetable2 + '',
+  'A bowl of ' + Cooking + ' ' + Vegetable + ' with ' + Vegetable2 + '',
+  'A plate of ' + Cooking + ' ' + Seasoning + ' ' + Protein + ' and ' + Vegetable + '',
+  'A bowl of ' + Cooking + ' ' + Seasoning + ' ' + Protein + ' and ' + Vegetable + '',
+  'A plate of ' + Cooking + ' ' + Seasoning + ' ' + Vegetable + ' and ' + Vegetable2 + '',
+  'A bowl of ' + Cooking + ' ' + Seasoning + ' ' + Vegetable + ' and ' + Vegetable2 + '',
+  'A plate of ' + Cooking + ' ' + Protein + ' with ' + Vegetable + ' and ' + Cooking2 + ' ' + Fruit + ' for dessert',
+  'A bowl of ' + Cooking + ' ' + Protein + ' with ' + Vegetable + ' and ' + Cooking2 + ' ' + Fruit + ' for dessert'];
+  var meal = meals[Math.floor(Math.random() * meals.length)];
+  var container4 = document.getElementById('output4');
+  container4.innerHTML = meal;
+}
+$(document).ready(function(){
+  tavernMeal();
+  $('#button4').click(function(){
+    tavernMeal();
+  });
+});
+
+//tavern meals - end
+
+</script>
+    
+<style> 
+h2 {
+    background: #5a151538;
+    width: 80%;
+    margin: auto;
+	border: 3px double black;
+	box-shadow: #9b9b9b 5px 5px;
+}
+button {
+    border: none;
+    background: none;
+    font-family: Concert One;
+    font-size: 24pt;
+    cursor: pointer;
+}
+  button:hover, .button:hover {
+    background: #cfcfcf !important;
+  }
+</style>
+</body>
+</html>
