@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans+SC|Cedarville+Cursive|Tangerine|Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Generator</title>
+  </head>
+  <body style="background: url(https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png);">
+  <<a href="../index.php">Generators</a>
+  <div id="logo" style="cursor: pointer; width: 100%; text-align: center; font-size: 108pt; font-family: Fredericka the Great; color: #990000; background: url('https://www.toptal.com/designers/subtlepatterns/patterns/textured_stripes.png');">
+    Names
+  </div>
+  
+<div style="width: 100%; text-align: center;">
+  <h2 style="font-size:  48pt; font-family: Fredericka the Great;" id="output">&nbsp;</h2>
+  <button id="button">Generate Male Name</button>
+</div>
+
+<div style="width: 100%; text-align: center;">
+  <h1 style="font-size:  48pt; font-family: Fredericka the Great;" id="output2">&nbsp;</h1>
+  <button id="button2">Generate Female Name</button>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script>
+//Character Name
+
+function randomWord(type) {
+var words = {
+  Male: ['Asmund', 'Bjorn', 'Cade', 'Dagfinn', 'Edan', 'Floki', 'Georg', 'Hvitserk', 'Ivar', 'Jorden', 'Kennet', 'Leif', 'Magnau', 'Niklaus', 'Olaf', 'Knute', 'Laefke', 'Ragnar', 'Sigurd', 'Thor', 'Ubbe', 'Vilhelm', 'Viggo', 'Rollo', 'Yngvard', 'Zander', 'Ash', 'Brandish', 'Captian', 'Duke', 'Ezekiel', 'Flynn', 'Grint', 'Hardigan', 'Ivan', 'Jag', 'Knife', 'Langur', 'Max', 'Noah', 'Otto', 'Packer', 'Quigley', 'Ricket', 'Solomon', 'Tyron', 'Offred', 'Vick', 'Wolfgang', 'Cxander', 'York', 'Zed', 'Algemon', 'Ambrose', 'Archibald', 'Basil', 'Cornelius', 'Cuthbert', 'Cyril', 'Ebenezer', 'Fergus', 'Gilbert', 'Humphrey', 'Jasper', 'Leopold', 'Lionel', 'Llewellyn', 'Montague', 'Neville', 'Percival', 'Roderick', 'Rupert', 'Septimus', 'Standley', 'Theodore', 'Vernon', 'Victor', 'Wilfred', 'Akio', 'Bo', 'Chen', 'Dai', 'Sachi', 'Fen', 'Gen', 'Haruki', 'Ichiro', 'Jun', 'Kadan', 'Li', 'Jinn', 'Midori', 'Orino', 'Park', 'Qing Yuan', 'Ronin', 'Shen', 'Toshiro', 'Hue', 'Shan', 'Wing', 'Kenzo', 'Yoshiko', 'Zen', 'Ashur', 'Bakari', 'Chibale', 'Diallo', 'Emir', 'Farid', 'Hakin', 'Husani', 'Idris', 'Jabin', 'Kedar', 'Leron', 'Majid', 'Nadim', 'Omarion', 'Phineas', 'Qasim', 'Rafi', 'Shade', 'Than', 'Ulan', 'Vashon', 'Wasim', 'Xavier', 'Yousef', 'Zahur', 'Adnan', 'Bibi', 'Chakir', 'Din', 'Ekon', 'Eze', 'Gadi', 'Hilel', 'Iman', 'Jericho', 'Keon', 'Lisha', 'Mehmet', 'Najib', 'Ottmar', 'Tevin', 'Qadum', 'Ridyad', 'Saleem', 'Tyrell', 'Umi', 'Vega', 'Waleed', 'Zayd', 'Yahir', 'Zuri'],
+  LastName: ['The Bold', 'IronSide', 'The Red', 'The Braggart', 'The Crow', 'Halfhand', 'The Innocent', 'The Fearless', 'Hollowleg', 'Jorgansen', 'Bearclaw', 'The Blackthorn', 'Whitemane', 'Ravencrone', 'Swiftseer', 'The Rotten', 'The Slayer', 'Rockbreaker', 'Stoutspear', 'The Smith', 'Unminded', 'The Laggerd', 'Windrime', 'The Pickled', 'The Younger', 'The Broken', 'Albatross', 'Brook', 'Crow', 'Drake', 'Wakehold', 'Flash', 'Glass', 'Hammer', 'Ice', 'Jackboot', 'Ka', 'Longbow', 'Mason', 'Nethers', 'Odin', 'Pathfinder', 'Quiver', 'Ranger', 'Savage', 'Thorn', 'Unger', 'Fellow', 'Warheart', 'Xeven', 'Yen', 'Zimmer', 'Fray', 'Prynne', 'Dashwood', 'Witherdale', 'Young', 'Eyre', 'Swan', 'Marple', 'Doyle', 'Granger', 'Jones', 'Thropp', 'Slander', 'Evenstar', 'Hatter', 'Mason', 'Youngblood', 'Bennet', 'Prior', 'Lovegood', 'Everdeen', 'Addlestone', 'Wrathchild', 'Craford', 'Shirley', 'Gilbert', 'From the West', 'Byrd', 'Jackson', 'Sparrow', 'Of the Coast', 'Jode', 'Med Jead', 'Bart', 'OFell', 'Kidd', 'OMalley', 'Barncle', 'Holystone', 'Hornswaggle', 'McConnel', 'Swashbuckle', 'Sea Wolf', 'Flat Beard', 'Chumbucket', 'Rivers', 'Morgan', 'Oisin', 'Three Gate', 'Bailey', 'Eoghan', 'Darkwater', 'Choi', 'Shan', 'Khan', 'Truong', 'Reyes', 'Young', 'Liang', 'Hwang', 'Pham', 'Li', 'Sarwar', 'Bhagat', 'Tseng', 'Shih', 'Nguyen', 'Singh', 'Lam', 'Chin', 'Sun', 'Sharma', 'Doan', 'Vuong', 'Leong', 'Gupta', 'Song', 'Yi', 'Greenroad', 'Fallenleaf', 'Winterbranch', 'Oakroad', 'Ashtree', 'Nearwood', 'Rivergrass', 'Lakebird', 'Mosshill', 'Farwalk', 'Shadepath', 'Springflower', 'Neverfall', 'Redsilk', 'Highgrass', 'Wheatground', 'Sagetree', 'GreenVine', 'Earthenhome', 'Burntwood', 'Yellowsky', 'Autumnreeds', 'Cedararrow', 'Quillpage', 'Goldenwillow', 'Everking']
+};
+
+
+  var rando = Math.floor(Math.random() * words[type].length),
+    word = words[type][rando];
+  return word;
+}
+
+$('#button').click(function() {
+
+  var Male = randomWord('Male'),
+    LastName = randomWord('LastName');
+
+
+  var malenames = ['<p> ' + Male  + ' ' + LastName + '</p>'];
+
+  var malename = malenames[Math.floor(Math.random() * malenames.length)];
+
+  var container = document.getElementById('output');
+  container.innerHTML = malename;
+});
+
+
+function randomWord2(type) {
+var words2 = {
+  Female: ['Aslaug', 'Belinda', 'Cadence', 'Dagmar', 'Edda', 'Freja', 'Grete', 'Hege', 'Ingrid', 'Jytte', 'Katrine', 'Lagertha', 'Magda', 'Nadia', 'Ophelia', 'Karan', 'Frederik', 'Ragnild', 'Siggy', 'Torvi', 'Uma', 'Valda', 'Astrid', 'Rehea', 'Yngvild', 'Ziggy', 'Artemis', 'Bolt', 'Crane', 'Digger', 'Ember', 'Falcon', 'Grey', 'Hoppy', 'Iz', 'Jezebel', 'Krist', 'Loris', 'Minnow', 'North', 'Octavia', 'Prudence', 'Quinn', 'Red', 'Steely', 'Terra', 'Hazel', 'Via', 'Weedy', 'Xil', 'Yolf', 'Zephyr', 'Augusta', 'Fanny', 'Lavina', 'Eugenie', 'Wilhemina', 'Clementina', 'Marguerite', 'Theodora', 'Gwendoline', 'Emmeline', 'Winifred', 'Adelaide', 'Henrietta', 'Josephine', 'Amelia', 'Prudence', 'Dorcas', 'Mildred', 'Lenore', 'Gertrude', 'Beatrice', 'Agatha', 'Violet', 'Constance', 'Millicent', 'Ursula', 'Akria', 'Fai', 'Chiyo', 'Da-Xia', 'Eika', 'Fu', 'Gin', 'Hana', 'Inari', 'Jia Li', 'Kini', 'Liang', 'Michiko', 'Nori', 'Quan', 'Qi', 'Miwa', 'Rin', 'Sada', 'Taki', 'Umeko', 'Komeko', 'Wen', 'Xia', 'Yuta', 'Ziang', 'Adisa', 'Binta', 'Chinua', 'Damisi', 'Eshe', 'Fayola', 'Gamila', 'Hoda', 'Iesha', 'Jadira', 'Keisha', 'Laila', 'Makena', 'Naimbi', 'Ola', 'Pili', 'Qiturah', 'Rida', 'Sade', 'Tahira', 'Ulima', 'Vanna', 'Wilma', 'Xhosa', 'Yemaya', 'Zariah', 'Aanisah', 'Basimah', 'Cala', 'Deka', 'Evetta', 'Faridah', 'Halima', 'Hasna', 'Itzel', 'Jemimah', 'Kioni', 'Lilac', 'Maryam', 'Nkomo', 'Omarosa', 'Taye', 'Tabitha', 'Radhiya', 'Saffron', 'Tonye', 'Basimah', 'Yessenia', 'Sari', 'Thana', 'Yartitza', 'Zuleika'],
+  LastName2: ['The Bold', 'IronSide', 'The Red', 'The Braggart', 'The Crow', 'Halfhand', 'The Innocent', 'The Fearless', 'Hollowleg', 'Jorgansen', 'Bearclaw', 'The Blackthorn', 'Whitemane', 'Ravencrone', 'Swiftseer', 'The Rotten', 'The Slayer', 'Rockbreaker', 'Stoutspear', 'The Smith', 'Unminded', 'The Laggerd', 'Windrime', 'The Pickled', 'The Younger', 'The Broken', 'Albatross', 'Brook', 'Crow', 'Drake', 'Wakehold', 'Flash', 'Glass', 'Hammer', 'Ice', 'Jackboot', 'Ka', 'Longbow', 'Mason', 'Nethers', 'Odin', 'Pathfinder', 'Quiver', 'Ranger', 'Savage', 'Thorn', 'Unger', 'Fellow', 'Warheart', 'Xeven', 'Yen', 'Zimmer', 'Fray', 'Prynne', 'Dashwood', 'Witherdale', 'Young', 'Eyre', 'Swan', 'Marple', 'Doyle', 'Granger', 'Jones', 'Thropp', 'Slander', 'Evenstar', 'Hatter', 'Mason', 'Youngblood', 'Bennet', 'Prior', 'Lovegood', 'Everdeen', 'Addlestone', 'Wrathchild', 'Craford', 'Shirley', 'Gilbert', 'From the West', 'Byrd', 'Jackson', 'Sparrow', 'Of the Coast', 'Jode', 'Med Jead', 'Bart', 'OFell', 'Kidd', 'OMalley', 'Barncle', 'Holystone', 'Hornswaggle', 'McConnel', 'Swashbuckle', 'Sea Wolf', 'Flat Beard', 'Chumbucket', 'Rivers', 'Morgan', 'Oisin', 'Three Gate', 'Bailey', 'Eoghan', 'Darkwater', 'Choi', 'Shan', 'Khan', 'Truong', 'Reyes', 'Young', 'Liang', 'Hwang', 'Pham', 'Li', 'Sarwar', 'Bhagat', 'Tseng', 'Shih', 'Nguyen', 'Singh', 'Lam', 'Chin', 'Sun', 'Sharma', 'Doan', 'Vuong', 'Leong', 'Gupta', 'Song', 'Yi', 'Greenroad', 'Fallenleaf', 'Winterbranch', 'Oakroad', 'Ashtree', 'Nearwood', 'Rivergrass', 'Lakebird', 'Mosshill', 'Farwalk', 'Shadepath', 'Springflower', 'Neverfall', 'Redsilk', 'Highgrass', 'Wheatground', 'Sagetree', 'GreenVine', 'Earthenhome', 'Burntwood', 'Yellowsky', 'Autumnreeds', 'Cedararrow', 'Quillpage', 'Goldenwillow', 'Everking']
+};
+
+  var rando = Math.floor(Math.random() * words2[type].length),
+    word2 = words2[type][rando];
+  return word2;
+}
+
+$('#button2').click(function() {
+
+      var Female = randomWord2('Female'),
+        LastName2 = randomWord2('LastName2');
+
+      var femalename = ['<p> ' + Female + ' ' + LastName2 + '</p>'];
+
+      var container2 = document.getElementById('output2');
+      container2.innerHTML = femalename;
+      //Character names - End
+});
+</script>
+</body>
+</html>
