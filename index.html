@@ -16,6 +16,15 @@
     <button class="menu"><a href="../RPGA/Generator">Generators</a></button>
 	<button class="menu"><a href="../RPGA/Sheets">Sheets</a></button>
   </div>
+	
+	<?php
+$filename = file.txt;
+   $content = file_get_contents ($filename);
+header ('Content-Type: application/octet-stream');
+print $content;
+
+print "hello";
+?>
  
 
 </body>
